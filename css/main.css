@@ -1,1 +1,60 @@
-*, :before, :after {box-sizing:border-box;}
+*,
+/* Se llaman pseudo selectores */ 
+::before, /* Se utilitza para añadir un contenido antes de un elemento */
+::after { /* Se utilitza para añadir un contenido despues de un elemento */
+    box-sizing:border-box;
+}
+
+/*Hemos visto que hay un color quye se repite varias veces en la web entonces le creamos una variable css*/
+:root {
+    --primary: #FA7343;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Intro', sans-serif;
+    font-weight: 900px;
+}
+
+nav {
+    display: flex; /* totdo el div se convierte en un contenedor flexible */
+    align-items: center; /* en el eje de la "y" quiero centrar el contenido */
+    justify-content: space-around;
+}
+
+.description {
+    color: #9ea0a5;
+}
+
+.title {
+    color: var(--primary);
+}
+
+
+/* tus decencientes que sean de tipo imagen deben tener esto */
+.nav-mobile img {
+    width: 32px;
+}
+
+.desktop.menu {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    /*Cuando lleguemos a un minimo de 768px, muestra el menu desktop y oculta el menu mobile*/
+    .desktop.menu {
+        display: block;
+    }
+
+    .nav-mobile {
+        display: none;
+    }
+}
